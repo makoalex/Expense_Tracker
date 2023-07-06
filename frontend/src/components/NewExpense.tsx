@@ -32,6 +32,7 @@ const NewExpense = (props:any) => {
   const submitHandler = (e: any) => {
     e.preventDefault();
     expenseData = {
+      id: Math.random().toString(),
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate)

@@ -32,6 +32,7 @@ const expenses: ExpenseObj[]= [
 function App() {
   const [expensed, setExpenses]= useState<ExpenseObj[]>(expenses)
   
+  
  const addExpenseHandler = (expense:ExpenseObj)=>{
   console.log(expense)
   setExpenses(prevExpens => {
