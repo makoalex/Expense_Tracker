@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import './ExpenseItem.css'
 import ExpenseDate from './ExpenseDate';
 
-const expenseItem = (props:any)=>{
+const ExpenseItem = (props:any)=>{
     // creating and hard coding dummy data
 
 
@@ -17,4 +17,4 @@ const expenseItem = (props:any)=>{
     )
 }
 
-export default expenseItem
+export default ExpenseItem
