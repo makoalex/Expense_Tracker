@@ -2,7 +2,7 @@
     id?: string,
     title:string,
     amount: number,
-    date: Date | string
+    date: Date 
 
   }
   type ExpenseDateProps = {

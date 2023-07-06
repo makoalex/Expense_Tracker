@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './NewExpense.css';
-import { ExpenseDataType } from '../Types';
+import { ExpenseDataType , } from '../Types';
+import ExpenseDateProps from '../Types';
 
 const NewExpense = (props:any) => {
   const [enteredTitle, setEnteredTitle] = useState('');
@@ -33,13 +34,14 @@ const NewExpense = (props:any) => {
     expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
-      date: new Date(enteredDate).toISOString(),
+      date: new Date(enteredDate)
     };
+    props.onAddExpense(expenseData)
     console.log(expenseData)
     setEnteredTitle('')
     setEnteredAmount('')
     setEnteredDate('')
-    props.onAddExpense(expenseData)
+    
   };
 
   return (
