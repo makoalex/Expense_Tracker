@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ExpenseItem from './components/ExpenseItem'
 
 
 import React from 'react'
@@ -7,7 +8,9 @@ function App() {
 
   return (
     <>
-    mako
+  <section>
+    <ExpenseItem></ExpenseItem>
+  </section>
     </>
   )
 }
