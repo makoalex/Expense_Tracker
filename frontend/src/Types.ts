@@ -1,11 +1,20 @@
  export type ExpenseObj= {
-    id?: number,
+    id?: string,
     title:string,
     amount: number,
-    date:string
+    date: Date | string
+
   }
   type ExpenseDateProps = {
     date: Date
-}
+};
+
+export type ExpenseDataType ={
+  title: string;
+  amount:string,
+  date:string
+
+};
+
 
 export default ExpenseDateProps
