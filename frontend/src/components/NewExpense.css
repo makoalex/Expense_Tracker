@@ -1,11 +1,14 @@
-.new-expense {
+.new-expense form{
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Adjust this value based on your layout */
     background-color: #90dc26;
     padding: 1rem;
-    margin: 1rem auto;
+    margin: 1rem 1rem;
     width: 50rem;
     max-width: 95%;
     border-radius: 6px;
-    text-align: center;
+
     box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
   }
   .new-expense button {
@@ -20,9 +23,9 @@
     border-radius: 6px;
     margin-right: 1rem;
   }
-  .new-expense button:hover,
-.new-expense button:active {
-  background-color: #646265;
+ 
+.new-expense__control__title{
+  margin-left: 6rem;
 
 }
 .new-expense__controls {
@@ -37,6 +40,9 @@
     font-weight: bold;
     margin-bottom: 0.5rem;
     display: block;
+    color: black;
+    font-size: 1.3rem;
+    font-weight: 200;
   }
   .new-expense__control input {
     font: inherit;
@@ -49,4 +55,9 @@
   
   .new-expense__actions {
     text-align: right;
+  }
+  .new-expense button:hover,
+  .new-expense button:active {
+    background-color: #646265;
+  
   }

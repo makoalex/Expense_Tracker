@@ -29,7 +29,7 @@ const NewExpense = (props:any) => {
     setEnteredDate(e.target.value);
   };
 
-  const submitHandler = (e: any) => {
+  const submitHandler = async(e: any) => {
     e.preventDefault();
     expenseData = {
       id: Math.random().toString(),
@@ -37,19 +37,30 @@ const NewExpense = (props:any) => {
       amount: enteredAmount,
       date: new Date(enteredDate)
     };
-    props.onAddExpense(expenseData)
-    console.log(expenseData)
-    setEnteredTitle('')
-    setEnteredAmount('')
-    setEnteredDate('')
-    
+    try{
+      const response = await fetch('http://localhost:3000/api/expense', {
+        method:"POST",
+        headers:{"Content-Type": "application/json"},
+        body:JSON.stringify(expenseData)
+      })
+      if(response.ok){
+        props.onAddExpense(expenseData)
+        setEnteredTitle('')
+        setEnteredAmount('')
+         setEnteredDate('')
+      }else{
+        throw new Error(response.statusText)
+      }
+    }  catch(err){
+      throw new Error('Failed to create expense')
+    }
   };
 
   return (
     <div className="new-expense">
       <form onSubmit={submitHandler}>
         <section className="new-expense__controls">
-          <div className="new-expense__control">
+          <div className="new-expense__control__title, new-expense__control">
             <label>Title</label>
             <input type="text" name="" id="text" value={enteredTitle} onChange={titleHandler} />
           </div>

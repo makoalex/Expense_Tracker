@@ -18,12 +18,13 @@ export type ExpenseType = {
 app.get('/test', (req, res)=>{
   res.json({message: "BOO"})
 })
-app.post ('/api/expense',async (req, res)=>{
-  // const { title, amount, date }: ExpenseType= req.body;
+app.post ('/api/expense', async (req, res)=>{
+  const { title, amount, date }: ExpenseType= req.body;
   const newExpense = req.body;
   const expense = await createNewCart(newExpense)
+  //createNewCart(req.body)
   res.json(expense)
-  res.send(createNewCart(req.body))
+  //res.send(expense)
 })
 
 app.get ('/api/expense', async(req, res)=>{

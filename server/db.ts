@@ -1,5 +1,5 @@
 import * as mongoDb from 'mongodb';
-// mport * as expenseData from '../frontend/src/components/NewExpense'
+// import * as expenseData from '../frontend/src/components/NewExpense'
 import { ExpenseType } from '.';
 
 const url = 'mongodb://saltadmin:episalt@localhost:27017/expense';
@@ -16,7 +16,7 @@ export const createNewCart = async (newExpense: ExpenseType) => {
     await mongoClient.close();
     return newExpense;
   } catch (err) {
-    throw new Error('not generated!');
+    throw new Error('not generated');
   }
 };
 export const getAllExpenses = async () => {
